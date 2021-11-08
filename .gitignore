@@ -1,0 +1,9 @@
+.Xil
+vivado_project
+peta_project
+*.xsa
+*.log
+*.jou
+*.str
+*.bit
+*.mmi
