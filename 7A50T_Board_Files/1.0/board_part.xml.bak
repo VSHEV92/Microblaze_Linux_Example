@@ -1,0 +1,737 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<board_part board_name="7a50t" board_revision="a" board_part="part0" schema_version="1.0" vendor="em.avnet.com" version="1.0">
+  <part_info part_name="xc7a50tftg256-1" device="xc7a50t" family="artix7" jtag_position="1" package="ftg256" silicon_version="1.0" speed_grade="-1" />
+  <board_info description="Artix-7 50T Evaluation Board" display_name="Artix-7 50T Evaluation Board" url="http://www.em.avnet.com/artix7evl" />
+  <interfaces>
+    <interface mode="master" name="ddr3_sdram" type="xilinx.com:interface:ddrx_rtl:1.0">
+      <preset_file name="mig.prj"/>
+    </interface>
+    <interface mode="master" name="dip_switches1_4bits" type="xilinx.com:interface:gpio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="TRI_I" physical_port="dip_switches1_4bits_i" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="dip_switches2_4bits" type="xilinx.com:interface:gpio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="TRI_I" physical_port="dip_switches2_4bits_i" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="leds_8bits" type="xilinx.com:interface:gpio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="TRI_O" physical_port="leds_8bits_o" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="push_buttons_4bits" type="xilinx.com:interface:gpio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="TRI_I" physical_port="push_buttons_4bits_i" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="iic_eeprom" type="xilinx.com:interface:iic_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="SDA_I" physical_port="iic_eeprom_sda_i" />
+        <port_map logical_port="SDA_O" physical_port="iic_eeprom_sda_o" />
+        <port_map logical_port="SDA_T" physical_port="iic_eeprom_sda_t" />
+        <port_map logical_port="SCL_I" physical_port="iic_eeprom_scl_i" />
+        <port_map logical_port="SCL_O" physical_port="iic_eeprom_scl_o" />
+        <port_map logical_port="SCL_T" physical_port="iic_eeprom_scl_t" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="eth1_mdio_io" type="xilinx.com:interface:mdio_io:1.0">
+      <port_maps>
+        <port_map logical_port="IO" physical_port="eth1_mdio_io" />
+        <port_map logical_port="MDC" physical_port="eth1_mdio_io_mdc" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="eth1_mdio_mdc" type="xilinx.com:interface:mdio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="MDIO_I" physical_port="eth1_mdio_i" />
+        <port_map logical_port="MDIO_O" physical_port="eth1_mdio_o" />
+        <port_map logical_port="MDIO_T" physical_port="eth1_mdio_t" />
+        <port_map logical_port="MDC" physical_port="eth1_mdc" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="eth1_phy_reset_n" type="xilinx.com:signal:reset_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="RESET" physical_port="eth1_phy_reset_n" />
+      </port_maps>
+      <parameters>
+        <parameter name="RST_POLARITY" value="0" />
+      </parameters>
+	</interface>
+    <interface mode="master" name="eth1_ref_clk" type="xilinx.com:signal:clock_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="CLK" physical_port="eth1_ref_clk" />
+      </port_maps>
+      <parameters>
+        <parameter name="frequency" value="50000000" />
+      </parameters>
+    </interface>
+    <interface mode="master" name="eth1_rmii" type="xilinx.com:interface:rmii_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="CRS_DV" physical_port="eth1_crs_dv" />
+        <port_map logical_port="RXD" physical_port="eth1_rxd" />
+        <port_map logical_port="TX_EN" physical_port="eth1_tx_en" />
+        <port_map logical_port="TXD" physical_port="eth1_txd" />
+        <port_map logical_port="RX_ER" physical_port="eth1_rx_er" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="eth2_mdio_io" type="xilinx.com:interface:mdio_io:1.0">
+      <port_maps>
+        <port_map logical_port="IO" physical_port="eth2_mdio_io" />
+        <port_map logical_port="MDC" physical_port="eth2_mdio_io_mdc" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="eth2_mdio_mdc" type="xilinx.com:interface:mdio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="MDIO_I" physical_port="eth2_mdio_i" />
+        <port_map logical_port="MDIO_O" physical_port="eth2_mdio_o" />
+        <port_map logical_port="MDIO_T" physical_port="eth2_mdio_t" />
+        <port_map logical_port="MDC" physical_port="eth2_mdc" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="eth2_phy_reset_n" type="xilinx.com:signal:reset_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="RESET" physical_port="eth2_phy_reset_n" />
+      </port_maps>
+      <parameters>
+        <parameter name="RST_POLARITY" value="0" />
+      </parameters>
+    </interface>
+    <interface mode="master" name="eth2_ref_clk" type="xilinx.com:signal:clock_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="CLK" physical_port="eth2_ref_clk" />
+      </port_maps>
+      <parameters>
+        <parameter name="frequency" value="50000000" />
+      </parameters>
+    </interface>
+    <interface mode="master" name="eth2_rmii" type="xilinx.com:interface:rmii_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="CRS_DV" physical_port="eth2_crs_dv" />
+        <port_map logical_port="RXD" physical_port="eth2_rxd" />
+        <port_map logical_port="TX_EN" physical_port="eth2_tx_en" />
+        <port_map logical_port="TXD" physical_port="eth2_txd" />
+        <port_map logical_port="RX_ER" physical_port="eth2_rx_er" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="usb_uart" type="xilinx.com:interface:uart_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="TxD" physical_port="uart_txd" />
+        <port_map logical_port="RxD" physical_port="uart_rxd" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="qspi_flash" type="xilinx.com:interface:spi_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="IO0_I" physical_port="qspi_io0_i" />
+        <port_map logical_port="IO0_O" physical_port="qspi_io0_o" />
+        <port_map logical_port="IO0_T" physical_port="qspi_io0_t" />
+        <port_map logical_port="IO1_I" physical_port="qspi_io1_i" />
+        <port_map logical_port="IO1_O" physical_port="qspi_io1_o" />
+        <port_map logical_port="IO1_T" physical_port="qspi_io1_t" />
+        <port_map logical_port="IO2_I" physical_port="qspi_io2_i" />
+        <port_map logical_port="IO2_O" physical_port="qspi_io2_o" />
+        <port_map logical_port="IO2_T" physical_port="qspi_io2_t" />
+        <port_map logical_port="IO3_I" physical_port="qspi_io3_i" />
+        <port_map logical_port="IO3_O" physical_port="qspi_io3_o" />
+        <port_map logical_port="IO3_T" physical_port="qspi_io3_t" />
+        <port_map logical_port="SS_I" physical_port="qspi_ss_i" />
+        <port_map logical_port="SS_O" physical_port="qspi_ss_o" />
+        <port_map logical_port="SS_T" physical_port="qspi_ss_t" />
+        <port_map logical_port="SCK_I" physical_port="qspi_sck_i" />
+        <port_map logical_port="SCK_O" physical_port="qspi_sck_o" />
+        <port_map logical_port="SCK_T" physical_port="qspi_sck_t" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="pmod1" type="xilinx.com:interface:gpio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="TRI_I" physical_port="pmod1_i" />
+        <port_map logical_port="TRI_O" physical_port="pmod1_o" />
+        <port_map logical_port="TRI_T" physical_port="pmod1_t" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="pmod2" type="xilinx.com:interface:gpio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="TRI_I" physical_port="pmod2_i" />
+        <port_map logical_port="TRI_O" physical_port="pmod2_o" />
+        <port_map logical_port="TRI_T" physical_port="pmod2_t" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="pmod3" type="xilinx.com:interface:gpio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="TRI_I" physical_port="pmod3_i" />
+        <port_map logical_port="TRI_O" physical_port="pmod3_o" />
+        <port_map logical_port="TRI_T" physical_port="pmod3_t" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="pmod4" type="xilinx.com:interface:gpio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="TRI_I" physical_port="pmod4_i" />
+        <port_map logical_port="TRI_O" physical_port="pmod4_o" />
+        <port_map logical_port="TRI_T" physical_port="pmod4_t" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="pmod5" type="xilinx.com:interface:gpio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="TRI_I" physical_port="pmod5_i" />
+        <port_map logical_port="TRI_O" physical_port="pmod5_o" />
+        <port_map logical_port="TRI_T" physical_port="pmod5_t" />
+      </port_maps>
+    </interface>
+    <interface mode="master" name="pmod6" type="xilinx.com:interface:gpio_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="TRI_I" physical_port="pmod6_i" />
+        <port_map logical_port="TRI_O" physical_port="pmod6_o" />
+        <port_map logical_port="TRI_T" physical_port="pmod6_t" />
+      </port_maps>
+    </interface>
+    <interface mode="slave" name="sys_clk" type="xilinx.com:signal:clock_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="CLK" physical_port="clk" />
+      </port_maps>
+      <parameters>
+        <parameter name="frequency" value="200000000" />
+      </parameters>
+    </interface>
+    <interface mode="slave" name="sys_rst" type="xilinx.com:signal:reset_rtl:1.0">
+      <port_maps>
+        <port_map logical_port="RST" physical_port="reset" />
+      </port_maps>
+      <parameters>
+        <parameter name="RST_POLARITY" value="1" />
+      </parameters>
+    </interface>
+  </interfaces>
+  <ports>
+    <port dir="in" left="3" name="dip_switches1_4bits_i" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="P1" />
+        <pin index="1" iostandard="LVCMOS33" loc="P4" />
+        <pin index="2" iostandard="LVCMOS33" loc="P3" />
+        <pin index="3" iostandard="LVCMOS33" loc="M5" />
+      </pins>
+    </port>
+    <port dir="in" left="3" name="dip_switches2_4bits_i" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="K2" />
+        <pin index="1" iostandard="LVCMOS33" loc="K3" />
+        <pin index="2" iostandard="LVCMOS33" loc="L2" />
+        <pin index="3" iostandard="LVCMOS33" loc="L3" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="leds_8bits_o" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="L5" />
+        <pin index="1" iostandard="LVCMOS33" loc="L4" />
+        <pin index="2" iostandard="LVCMOS33" loc="M4" />
+        <pin index="3" iostandard="LVCMOS33" loc="N3" />
+        <pin index="4" iostandard="LVCMOS33" loc="N2" />
+        <pin index="5" iostandard="LVCMOS33" loc="M2" />
+        <pin index="6" iostandard="LVCMOS33" loc="N1" />
+        <pin index="7" iostandard="LVCMOS33" loc="M1" />
+      </pins>
+    </port>
+    <port dir="in" left="3" name="push_buttons_4bits_i" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="N4" />
+        <pin index="1" iostandard="LVCMOS33" loc="R2" />
+        <pin index="2" iostandard="LVCMOS33" loc="R1" />
+        <pin index="3" iostandard="LVCMOS33" loc="R3" />
+      </pins>
+    </port>
+    <port dir="in" name="iic_eeprom_scl_i">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="R6" />
+      </pins>
+    </port>
+    <port dir="out" name="iic_eeprom_scl_o">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="R6" />
+      </pins>
+    </port>
+    <port dir="out" name="iic_eeprom_scl_t">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="R6" />
+      </pins>
+    </port>
+    <port dir="in" name="iic_eeprom_sda_i">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="R7" />
+      </pins>
+    </port>
+    <port dir="out" name="iic_eeprom_sda_o">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="R7" />
+      </pins>
+    </port>
+    <port dir="out" name="iic_eeprom_sda_t">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="R7" />
+      </pins>
+    </port>
+    <port dir="out" name="eth1_mdio_io_mdc">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="N16" />
+      </pins>
+    </port>
+    <port dir="out" name="eth1_mdc">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="N16" />
+      </pins>
+    </port>
+    <port dir="inout" name="eth1_mdio_io">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="P15" />
+      </pins>
+    </port>
+    <port dir="in" name="eth1_mdio_i">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="P15" />
+      </pins>
+    </port>
+    <port dir="out" name="eth1_mdio_o">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="P15" />
+      </pins>
+    </port>
+    <port dir="out" name="eth1_mdio_t">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="P15" />
+      </pins>
+    </port>
+    <port dir="out" name="eth1_phy_rst_n">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="R15" />
+      </pins>
+    </port>
+    <port dir="out" name="eth1_ref_clk">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="P16" />
+      </pins>
+    </port>
+    <port dir="in" name="eth1_crs_dv">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="M16" />
+      </pins>
+    </port>
+    <port dir="in" name="eth1_rx_er">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="L13" />
+      </pins>
+    </port>
+    <port dir="in" left="1" name="eth1_rxd" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="M14" />
+        <pin index="1" iostandard="LVCMOS33" loc="K13" />
+      </pins>
+    </port>
+    <port dir="out" name="eth1_tx_en">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="L14" />
+      </pins>
+    </port>
+    <port dir="out" left="1" name="eth1_txd" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="R13" />
+        <pin index="1" iostandard="LVCMOS33" loc="T12" />
+      </pins>
+    </port>
+    <port dir="out" name="eth2_mdio_io_mdc">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="R12" />
+      </pins>
+    </port>
+    <port dir="out" name="eth2_mdc">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="R12" />
+      </pins>
+    </port>
+	<port dir="inout" name="eth2_mdio_io">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="T13" />
+      </pins>
+    </port>
+    <port dir="in" name="eth2_mdio_i">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="T13" />
+      </pins>
+    </port>
+    <port dir="out" name="eth2_mdio_o">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="T13" />
+      </pins>
+    </port>
+    <port dir="out" name="eth2_mdio_t">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="T13" />
+      </pins>
+    </port>
+    <port dir="out" name="eth2_phy_rst_n">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="R11" />
+      </pins>
+    </port>
+    <port dir="out" name="eth2_ref_clk">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="R10" />
+      </pins>
+    </port>
+    <port dir="in" name="eth2_crs_dv">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="P11" />
+      </pins>
+    </port>
+    <port dir="in" name="eth2_rx_er">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="P10" />
+      </pins>
+    </port>
+    <port dir="in" left="1" name="eth2_rxd" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="P14" />
+        <pin index="1" iostandard="LVCMOS33" loc="T14" />
+      </pins>
+    </port>
+    <port dir="out" name="eth2_tx_en">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="P13" />
+      </pins>
+    </port>
+    <port dir="out" left="1" name="eth2_txd" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="T15" />
+        <pin index="1" iostandard="LVCMOS33" loc="N13" />
+      </pins>
+    </port>
+    <port dir="in" name="uart_rxd">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="M12" />
+      </pins>
+    </port>
+    <port dir="out" name="uart_txd">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="N6" />
+      </pins>
+    </port>
+    <port dir="in" name="qspi_io0_i">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="J13" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_io0_o">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="J13" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_io0_t">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="J13" />
+      </pins>
+    </port>
+    <port dir="in" name="qspi_io1_i">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="J14" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_io1_o">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="J14" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_io1_t">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="J14" />
+      </pins>
+    </port>
+    <port dir="in" name="qspi_io2_i">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="K15" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_io2_o">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="K15" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_io2_t">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="K15" />
+      </pins>
+    </port>
+    <port dir="in" name="qspi_io3_i">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="K16" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_io3_o">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="K16" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_io3_t">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="K16" />
+      </pins>
+    </port>
+    <port dir="in" left="0" name="qspi_ss_i" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="L12" />
+      </pins>
+    </port>
+    <port dir="out" left="0" name="qspi_ss_o" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="L12" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_ss_t">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="L12" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_sck_i">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="M15" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_sck_o">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="M15" />
+      </pins>
+    </port>
+    <port dir="out" name="qspi_sck_t">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="M15" />
+      </pins>
+    </port>
+    <port dir="in" left="7" name="pmod1_i" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="K1" />
+        <pin index="1" iostandard="LVCMOS33" loc="J1" />
+        <pin index="2" iostandard="LVCMOS33" loc="B7" />
+        <pin index="3" iostandard="LVCMOS33" loc="A7" />
+        <pin index="4" iostandard="LVCMOS33" loc="B6" />
+        <pin index="5" iostandard="LVCMOS33" loc="B5" />
+        <pin index="6" iostandard="LVCMOS33" loc="A5" />
+        <pin index="7" iostandard="LVCMOS33" loc="A4" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod1_o" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="K1" />
+        <pin index="1" iostandard="LVCMOS33" loc="J1" />
+        <pin index="2" iostandard="LVCMOS33" loc="B7" />
+        <pin index="3" iostandard="LVCMOS33" loc="A7" />
+        <pin index="4" iostandard="LVCMOS33" loc="B6" />
+        <pin index="5" iostandard="LVCMOS33" loc="B5" />
+        <pin index="6" iostandard="LVCMOS33" loc="A5" />
+        <pin index="7" iostandard="LVCMOS33" loc="A4" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod1_t" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="K1" />
+        <pin index="1" iostandard="LVCMOS33" loc="J1" />
+        <pin index="2" iostandard="LVCMOS33" loc="B7" />
+        <pin index="3" iostandard="LVCMOS33" loc="A7" />
+        <pin index="4" iostandard="LVCMOS33" loc="B6" />
+        <pin index="5" iostandard="LVCMOS33" loc="B5" />
+        <pin index="6" iostandard="LVCMOS33" loc="A5" />
+        <pin index="7" iostandard="LVCMOS33" loc="A4" />
+      </pins>
+    </port>
+    
+    <port dir="in" left="7" name="pmod2_i" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="B4" />
+        <pin index="1" iostandard="LVCMOS33" loc="A3" />
+        <pin index="2" iostandard="LVCMOS33" loc="C7" />
+        <pin index="3" iostandard="LVCMOS33" loc="C6" />
+        <pin index="4" iostandard="LVCMOS33" loc="C3" />
+        <pin index="5" iostandard="LVCMOS33" loc="C2" />
+        <pin index="6" iostandard="LVCMOS33" loc="B2" />
+        <pin index="7" iostandard="LVCMOS33" loc="A2" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod2_o" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="B4" />
+        <pin index="1" iostandard="LVCMOS33" loc="A3" />
+        <pin index="2" iostandard="LVCMOS33" loc="C7" />
+        <pin index="3" iostandard="LVCMOS33" loc="C6" />
+        <pin index="4" iostandard="LVCMOS33" loc="C3" />
+        <pin index="5" iostandard="LVCMOS33" loc="C2" />
+        <pin index="6" iostandard="LVCMOS33" loc="B2" />
+        <pin index="7" iostandard="LVCMOS33" loc="A2" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod2_t" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="B4" />
+        <pin index="1" iostandard="LVCMOS33" loc="A3" />
+        <pin index="2" iostandard="LVCMOS33" loc="C7" />
+        <pin index="3" iostandard="LVCMOS33" loc="C6" />
+        <pin index="4" iostandard="LVCMOS33" loc="C3" />
+        <pin index="5" iostandard="LVCMOS33" loc="C2" />
+        <pin index="6" iostandard="LVCMOS33" loc="B2" />
+        <pin index="7" iostandard="LVCMOS33" loc="A2" />
+      </pins>
+    </port>
+
+    <port dir="in" left="7" name="pmod3_i" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="D6" />
+        <pin index="1" iostandard="LVCMOS33" loc="D5" />
+        <pin index="2" iostandard="LVCMOS33" loc="E3" />
+        <pin index="3" iostandard="LVCMOS33" loc="D3" />
+        <pin index="4" iostandard="LVCMOS33" loc="D4" />
+        <pin index="5" iostandard="LVCMOS33" loc="C4" />
+        <pin index="6" iostandard="LVCMOS33" loc="F5" />
+        <pin index="7" iostandard="LVCMOS33" loc="E5" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod3_o" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="D6" />
+        <pin index="1" iostandard="LVCMOS33" loc="D5" />
+        <pin index="2" iostandard="LVCMOS33" loc="E3" />
+        <pin index="3" iostandard="LVCMOS33" loc="D3" />
+        <pin index="4" iostandard="LVCMOS33" loc="D4" />
+        <pin index="5" iostandard="LVCMOS33" loc="C4" />
+        <pin index="6" iostandard="LVCMOS33" loc="F5" />
+        <pin index="7" iostandard="LVCMOS33" loc="E5" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod3_t" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="D6" />
+        <pin index="1" iostandard="LVCMOS33" loc="D5" />
+        <pin index="2" iostandard="LVCMOS33" loc="E3" />
+        <pin index="3" iostandard="LVCMOS33" loc="D3" />
+        <pin index="4" iostandard="LVCMOS33" loc="D4" />
+        <pin index="5" iostandard="LVCMOS33" loc="C4" />
+        <pin index="6" iostandard="LVCMOS33" loc="F5" />
+        <pin index="7" iostandard="LVCMOS33" loc="E5" />
+      </pins>
+    </port>
+
+    <port dir="in" left="7" name="pmod4_i" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="F4" />
+        <pin index="1" iostandard="LVCMOS33" loc="F3" />
+        <pin index="2" iostandard="LVCMOS33" loc="F2" />
+        <pin index="3" iostandard="LVCMOS33" loc="E1" />
+        <pin index="4" iostandard="LVCMOS33" loc="G5" />
+        <pin index="5" iostandard="LVCMOS33" loc="G4" />
+        <pin index="6" iostandard="LVCMOS33" loc="G2" />
+        <pin index="7" iostandard="LVCMOS33" loc="G1" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod4_o" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="F4" />
+        <pin index="1" iostandard="LVCMOS33" loc="F3" />
+        <pin index="2" iostandard="LVCMOS33" loc="F2" />
+        <pin index="3" iostandard="LVCMOS33" loc="E1" />
+        <pin index="4" iostandard="LVCMOS33" loc="G5" />
+        <pin index="5" iostandard="LVCMOS33" loc="G4" />
+        <pin index="6" iostandard="LVCMOS33" loc="G2" />
+        <pin index="7" iostandard="LVCMOS33" loc="G1" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod4_t" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="F4" />
+        <pin index="1" iostandard="LVCMOS33" loc="F3" />
+        <pin index="2" iostandard="LVCMOS33" loc="F2" />
+        <pin index="3" iostandard="LVCMOS33" loc="E1" />
+        <pin index="4" iostandard="LVCMOS33" loc="G5" />
+        <pin index="5" iostandard="LVCMOS33" loc="G4" />
+        <pin index="6" iostandard="LVCMOS33" loc="G2" />
+        <pin index="7" iostandard="LVCMOS33" loc="G1" />
+      </pins>
+    </port>
+
+    <port dir="in" left="7" name="pmod5_i" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="H5" />
+        <pin index="1" iostandard="LVCMOS33" loc="H4" />
+        <pin index="2" iostandard="LVCMOS33" loc="J5" />
+        <pin index="3" iostandard="LVCMOS33" loc="J4" />
+        <pin index="4" iostandard="LVCMOS33" loc="H2" />
+        <pin index="5" iostandard="LVCMOS33" loc="H1" />
+        <pin index="6" iostandard="LVCMOS33" loc="J3" />
+        <pin index="7" iostandard="LVCMOS33" loc="H3" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod5_o" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="H5" />
+        <pin index="1" iostandard="LVCMOS33" loc="H4" />
+        <pin index="2" iostandard="LVCMOS33" loc="J5" />
+        <pin index="3" iostandard="LVCMOS33" loc="J4" />
+        <pin index="4" iostandard="LVCMOS33" loc="H2" />
+        <pin index="5" iostandard="LVCMOS33" loc="H1" />
+        <pin index="6" iostandard="LVCMOS33" loc="J3" />
+        <pin index="7" iostandard="LVCMOS33" loc="H3" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod5_t" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="H5" />
+        <pin index="1" iostandard="LVCMOS33" loc="H4" />
+        <pin index="2" iostandard="LVCMOS33" loc="J5" />
+        <pin index="3" iostandard="LVCMOS33" loc="J4" />
+        <pin index="4" iostandard="LVCMOS33" loc="H2" />
+        <pin index="5" iostandard="LVCMOS33" loc="H1" />
+        <pin index="6" iostandard="LVCMOS33" loc="J3" />
+        <pin index="7" iostandard="LVCMOS33" loc="H3" />
+      </pins>
+    </port>
+
+    <port dir="in" left="7" name="pmod6_i" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="P8" />
+        <pin index="1" iostandard="LVCMOS33" loc="R8" />
+        <pin index="2" iostandard="LVCMOS33" loc="T7" />
+        <pin index="3" iostandard="LVCMOS33" loc="T8" />
+        <pin index="4" iostandard="LVCMOS33" loc="T9" />
+        <pin index="5" iostandard="LVCMOS33" loc="T10" />
+        <pin index="6" iostandard="LVCMOS33" loc="R5" />
+        <pin index="7" iostandard="LVCMOS33" loc="T5" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod6_o" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="P8" />
+        <pin index="1" iostandard="LVCMOS33" loc="R8" />
+        <pin index="2" iostandard="LVCMOS33" loc="T7" />
+        <pin index="3" iostandard="LVCMOS33" loc="T8" />
+        <pin index="4" iostandard="LVCMOS33" loc="T9" />
+        <pin index="5" iostandard="LVCMOS33" loc="T10" />
+        <pin index="6" iostandard="LVCMOS33" loc="R5" />
+        <pin index="7" iostandard="LVCMOS33" loc="T5" />
+      </pins>
+    </port>
+    <port dir="out" left="7" name="pmod6_t" right="0">
+      <pins>
+        <pin index="0" iostandard="LVCMOS33" loc="P8" />
+        <pin index="1" iostandard="LVCMOS33" loc="R8" />
+        <pin index="2" iostandard="LVCMOS33" loc="T7" />
+        <pin index="3" iostandard="LVCMOS33" loc="T8" />
+        <pin index="4" iostandard="LVCMOS33" loc="T9" />
+        <pin index="5" iostandard="LVCMOS33" loc="T10" />
+        <pin index="6" iostandard="LVCMOS33" loc="R5" />
+        <pin index="7" iostandard="LVCMOS33" loc="T5" />
+      </pins>
+    </port>
+    <port dir="in" name="clk">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="N11" />
+      </pins>
+    </port>
+    <port dir="in" name="reset">
+      <pins>
+        <pin iostandard="LVCMOS33" loc="T2" />
+      </pins>
+    </port>
+  </ports>
+</board_part>
