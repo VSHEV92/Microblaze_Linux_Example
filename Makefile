@@ -11,6 +11,7 @@ xsa: microblaze_paltform.xsa
 	petalinux-create --type project --template microblaze --name peta_project; \
 	cd peta_project; \
 	petalinux-config --get-hw-description .. --silentconfig; \
+	cp ../init-ifupdown project-spec/meta-user/recipes-bsp; \
 	
 # создать xsa-файл	
 microblaze_paltform.xsa:
