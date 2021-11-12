@@ -1,0 +1,37 @@
+/include/ "system-conf.dtsi"
+
+&axi_iic_0 {
+    eeprom: eeprom@50 {
+        compatible = "at,24c32";
+        reg = <0x50>;
+    };
+};
+
+&axi_ethernetlite_0 {
+	phy-handle = <&ethernet_phy0>;
+	axi_ethernetlite_0_mdio: mdio {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		ethernet_phy0: ethernet-phy@19 {
+			device_type = "ethernet-phy";
+			reg = <19>;
+			compatible = "ethernet-phy-ieee802.3-c22";
+			phy_mode = "rmii";
+			
+		};
+	};
+};
+
+&axi_ethernetlite_1 {
+	phy-handle = <&ethernet_phy1>;
+	axi_ethernetlite_1_mdio: mdio {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		ethernet_phy1: ethernet-phy@18 {
+			device_type = "ethernet-phy";
+			reg = <18>;
+			compatible = "ethernet-phy-ieee802.3-c22";
+			phy_mode = "rmii";
+		};
+	};
+};
