@@ -12,9 +12,9 @@ xsa: microblaze_paltform.xsa
 	cd peta_project; \
 	petalinux-config --get-hw-description .. --silentconfig; \
 	cp ../system-user.dtsi project-spec/meta-user/recipes-bsp/device-tree/files; \
-	cp ../init-ifupdown project-spec/meta-user/recipes-bsp; \
-	cp ../phytool project-spec/meta-user/recipes-apps; \
-	cp ../ledstoggle project-spec/meta-user/recipes-apps; \
+	cp -r ../init-ifupdown project-spec/meta-user/recipes-bsp; \
+	cp -r ../phytool project-spec/meta-user/recipes-apps; \
+	cp -r ../ledstoggle project-spec/meta-user/recipes-apps; \
 	
 # создать xsa-файл	
 microblaze_paltform.xsa:

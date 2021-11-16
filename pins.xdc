@@ -1,6 +1,24 @@
+set_property CFGBVS VCCO [current_design]
+set_property CONFIG_VOLTAGE 3.3 [current_design]
+set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
+set_property config_mode SPIx4 [current_design]
+
 # clock 200 MHz
 set_property PACKAGE_PIN N11 [get_ports sys_clk_i]
 set_property IOSTANDARD LVCMOS33 [get_ports sys_clk_i]
+
+set_property PACKAGE_PIN L12 [get_ports {SPI_0_0_ss_io[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports SPI_0_0_ss_io[0]]
+set_property PACKAGE_PIN M15 [get_ports {SPI_0_0_sck_io}]
+set_property IOSTANDARD LVCMOS33 [get_ports SPI_0_0_sck_io]
+set_property PACKAGE_PIN J13 [get_ports {SPI_0_0_io0_io}]
+set_property IOSTANDARD LVCMOS33 [get_ports SPI_0_0_io0_io]
+set_property PACKAGE_PIN J14 [get_ports {SPI_0_0_io1_io}]
+set_property IOSTANDARD LVCMOS33 [get_ports SPI_0_0_io1_io]
+set_property PACKAGE_PIN K15 [get_ports {SPI_0_0_io2_io}]
+set_property IOSTANDARD LVCMOS33 [get_ports SPI_0_0_io2_io]
+set_property PACKAGE_PIN K16 [get_ports {SPI_0_0_io3_io}]
+set_property IOSTANDARD LVCMOS33 [get_ports SPI_0_0_io3_io]
 
 # phy ref clk
 set_property PACKAGE_PIN P16 [get_ports {phy0_clk}]
