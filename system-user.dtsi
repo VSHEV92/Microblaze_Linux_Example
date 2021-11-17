@@ -7,6 +7,14 @@
     };
 };
 
+&flash0 {
+	compatible = "n25q256a","jedec,spi-nor";
+	spi-tx-bus-width=<4>;
+	spi-rx-bus-width=<4>;
+	spi-max-frequency = <5000000>;
+	
+};
+
 &axi_ethernetlite_0 {
 	phy-handle = <&ethernet_phy0>;
 	axi_ethernetlite_0_mdio: mdio {
