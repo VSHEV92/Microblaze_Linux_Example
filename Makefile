@@ -1,12 +1,7 @@
 SHELL := /bin/bash
 
-# собрать проект из bsp-файла
-bsp:
-	source /opt/Xilinx/PetaLinux/2021.1/tool/settings.sh; \
-	petalinux-create -t project -s microblaze_example.bsp -n peta_project
-
 # собрать проект из xsa-файла
-xsa: microblaze_paltform.xsa 
+all: microblaze_paltform.xsa 
 	source /opt/Xilinx/PetaLinux/2021.1/tool/settings.sh; \
 	petalinux-create --type project --template microblaze --name peta_project; \
 	cd peta_project; \
