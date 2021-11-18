@@ -13,9 +13,11 @@ xsa: microblaze_paltform.xsa
 	petalinux-config --get-hw-description .. --silentconfig; \
 	cp ../system-user.dtsi project-spec/meta-user/recipes-bsp/device-tree/files; \
 	cp -r ../init-ifupdown project-spec/meta-user/recipes-bsp; \
+	petalinux-create -t apps --template install --name phytool --enable; \
 	cp -r ../phytool project-spec/meta-user/recipes-apps; \
+	petalinux-create -t apps --template c --name ledstoggle --enable; \
 	cp -r ../ledstoggle project-spec/meta-user/recipes-apps; \
-
+	
 # создать mcs-файла для загрузки Linux
 mcs:
 	source /opt/Xilinx/PetaLinux/2021.1/tool/settings.sh; \
